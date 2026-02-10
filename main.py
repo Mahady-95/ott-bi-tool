@@ -1,8 +1,18 @@
 from fastapi import FastAPI, Query
 import mysql.connector
 from mysql.connector import Error
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # DB config
 DB_CONFIG = {
