@@ -5,36 +5,49 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <h2>OTT BI Dashboard</h2>
 
-  <label>Metric:</label>
-  <select id="metric">
-    <option value="dau">DAU</option>
-    <option value="mau">MAU</option>
-    <option value="total_watch_time">Total Watch Time</option>
-  </select>
+<h2>OTT BI Dashboard</h2>
 
-  <label>Country:</label>
-  <select id="country">
-    <option value="">All</option>
-    <option value="BD">BD</option>
-    <option value="US">US</option>
-    <option value="IN">IN</option>
-  </select>
+<label>Metric:</label>
+<select id="metric">
+  <option value="dau">DAU</option>
+  <option value="mau">MAU</option>
+  <option value="total_watch_time">Total Watch Time</option>
+</select>
 
-  <label>Plan:</label>
-  <select id="plan">
-    <option value="">All</option>
-    <option value="Basic">Basic</option>
-    <option value="Standard">Standard</option>
-    <option value="Premium">Premium</option>
-  </select>
+<label>Country:</label>
+<select id="country">
+  <option value="">All</option>
+  <option value="BD">BD</option>
+  <option value="US">US</option>
+  <option value="IN">IN</option>
+</select>
 
-  <button onclick="loadMetric()">Load</button>
+<label>Plan:</label>
+<select id="plan">
+  <option value="">All</option>
+  <option value="Basic">Basic</option>
+  <option value="Standard">Standard</option>
+  <option value="Premium">Premium</option>
+</select>
 
-  <br><br>
-  <canvas id="chart" width="600" height="300"></canvas>
+<button onclick="loadMetric()">Load</button>
 
-  <script src="app.js"></script>
+<br><br>
+<canvas id="chart" width="600" height="300"></canvas>
+
+<script src="app.js"></script>
+
+<hr>
+
+<label>Dashboard name:</label>
+<input id="dashboardName" placeholder="business_overview">
+
+<button onclick="addChart()">Add Chart</button>
+<button onclick="saveDashboard()">Save Dashboard</button>
+<button onclick="loadDashboard()">Load Dashboard</button>
+
+<ul id="chartList"></ul>
+
 </body>
 </html>
